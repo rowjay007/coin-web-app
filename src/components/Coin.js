@@ -1,4 +1,5 @@
 import React from "react";
+import "../components/Coin.css";
 
 const Coin = ({
   priceChange,

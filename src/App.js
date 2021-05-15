@@ -1,10 +1,11 @@
 import axios from "axios";
+import "./App.css";
 import { useEffect, useState } from "react";
 import Coin from "./components/Coin";
 
 function App() {
   const [coins, setCoins] = useState([]);
-  // const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState([]);
   // const proxy = "https //cors-anywhere.herokuapp.com";
   useEffect(() => {
     axios
@@ -15,17 +16,23 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  // const handleChange = (e) => {
-  //   setSearch(e.target.value);
-  // };
+  const handleChange = (e) => {
+    // console.log(e.target.value);
+    setSearch(e.target.value);
+  };
 
-  const handleFiltered = coins.filter((coin) => coin);
+  const handleFiltered = coins.filter((coin) => coin.);
   return (
     <div className="coin-app">
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
         <form>
-          <input type="text" placeholder="Search" className="coin input" />
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={handleChange}
+            className="coin-input"
+          />
         </form>
       </div>
       {handleFiltered.map((coin) => {
