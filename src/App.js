@@ -5,7 +5,7 @@ import Coin from "./components/Coin";
 
 function App() {
   const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState([]);
+  // const [search, setSearch] = useState([]);
   // const proxy = "https //cors-anywhere.herokuapp.com";
   useEffect(() => {
     axios
@@ -16,24 +16,24 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleChange = (e) => {
-    // console.log(e.target.value);
-    setSearch(e.target.value);
-  };
+  // const handleChange = (e) => {
+  //   // console.log(e.target.value);
+  //   setSearch(e.target.value);
+  // };
 
-  const handleFiltered = coins.filter((coin) => coin.);
+  const handleFiltered = coins.filter((coin) => coin);
   return (
     <div className="coin-app">
       <div className="coin-search">
         <h1 className="coin-text">Search a currency</h1>
-        <form>
+        {/* <form>
           <input
             type="text"
             placeholder="Search"
-            onChange={handleChange}
+            // onChange={handleChange}
             className="coin-input"
           />
-        </form>
+        </form> */}
       </div>
       {handleFiltered.map((coin) => {
         return (
